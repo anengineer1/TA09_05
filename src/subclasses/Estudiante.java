@@ -1,12 +1,13 @@
 package subclasses;
 
 import superclasses.PersonaEnClase;
+import utils.Sexo;
 
 public class Estudiante extends PersonaEnClase {
 	
 	private double calificacion;
 	
-	public Estudiante(String nombre, String edad, String sexo, double probabilidad_asistencia_porcentaje, double calificacion) {
+	public Estudiante(String nombre, int edad, Sexo sexo, double probabilidad_asistencia_porcentaje, double calificacion) {
 		super(nombre, edad, sexo, probabilidad_asistencia_porcentaje);
 		this.calificacion = calificacion;
 	}
