@@ -2,13 +2,14 @@ package subclasses;
 
 import subclasses.Estudiante;
 import java.util.ArrayList;
+import utils.Materia;
 
 public class Aula {
 
-	final private String MATERIA_DEFECTO = "Matematicas";
+	final private Materia MATERIA_DEFECTO = Materia.MATEMATICAS;
 	final private int MAX_ESTUDIANTES_POR_DEFECTO = 20;
 
-	private String materia;
+	private Materia materia;
 	private int num_max_estudiantes;
 	private ArrayList<Estudiante> lista_estudiantes;
 	private Profesor profesor;
@@ -18,7 +19,7 @@ public class Aula {
 		this.num_max_estudiantes = this.MAX_ESTUDIANTES_POR_DEFECTO;
 	}
 
-	public Aula(int num_max_estudiantes, Profesor profesor, ArrayList<Estudiante> lista_estudiantes, String materia) {
+	public Aula(int num_max_estudiantes, Profesor profesor, ArrayList<Estudiante> lista_estudiantes, Materia materia) {
 		this.num_max_estudiantes = num_max_estudiantes;
 		this.profesor = profesor;
 		this.lista_estudiantes = lista_estudiantes;
@@ -55,7 +56,7 @@ public class Aula {
 		return estudiantes_que_asisten;
 	}
 
-	public String getMateria() {
+	public Materia getMateria() {
 		return materia;
 	}
 
@@ -71,7 +72,7 @@ public class Aula {
 		return profesor;
 	}
 
-	public void setMateria(String materia) {
+	public void setMateria(Materia materia) {
 		this.materia = materia;
 	}
 
