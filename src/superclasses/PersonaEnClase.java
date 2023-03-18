@@ -6,7 +6,7 @@ public class PersonaEnClase {
 	final private String NOMBRE_POR_DEFECTO = "";
 	final private int EDAD_POR_DEFECTO = 25;
 	final protected Sexo SEXO_POR_DEFECTO = Sexo.MUJER;
-	final protected double PROBAVILIDAD_DE_ASISTENCIA_POR_DEFECTO = 50;
+	final protected double PROBABILIDAD_DE_ASISTENCIA_POR_DEFECTO = 50;
 	
 	protected String nombre;
 	protected int edad;
@@ -18,7 +18,7 @@ public class PersonaEnClase {
 		this.nombre = this.NOMBRE_POR_DEFECTO;
 		this.edad = this.EDAD_POR_DEFECTO;
 		this.sexo = this.SEXO_POR_DEFECTO;
-		this.probabilidad_asistencia_porcentaje = this.PROBAVILIDAD_DE_ASISTENCIA_POR_DEFECTO;
+		this.probabilidad_asistencia_porcentaje = this.PROBABILIDAD_DE_ASISTENCIA_POR_DEFECTO;
 	}
 
 	public PersonaEnClase(String nombre, int edad, Sexo sexo, double probabilidad_asistencia_porcentaje) {

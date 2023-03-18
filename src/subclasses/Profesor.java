@@ -2,6 +2,7 @@ package subclasses;
 
 import superclasses.PersonaEnClase;
 import utils.Materia;
+import utils.Sexo;
 
 public class Profesor extends PersonaEnClase {
 
@@ -9,7 +10,7 @@ public class Profesor extends PersonaEnClase {
 	
 	private Materia materia;
 
-	public Profesor(String nombre, String edad, String sexo, Materia asignatura) {
+	public Profesor(String nombre, int edad, Sexo sexo, Materia asignatura) {
 		// el enunciado dice que el 20% de las veces no podrá asistir por tanto 80% de
 		// asistencia
 		super(nombre, edad, sexo, 80.0);
