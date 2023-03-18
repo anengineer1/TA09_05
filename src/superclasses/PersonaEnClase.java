@@ -1,13 +1,27 @@
 package superclasses;
 
+import utils.Sexo;
+
 public class PersonaEnClase {
+	final private String NOMBRE_POR_DEFECTO = "";
+	final private int EDAD_POR_DEFECTO = 25;
+	final protected Sexo SEXO_POR_DEFECTO = Sexo.MUJER;
+	final protected double PROBAVILIDAD_DE_ASISTENCIA_POR_DEFECTO = 50;
+	
 	protected String nombre;
-	protected String edad;
-	protected String sexo;
+	protected int edad;
+	protected Sexo sexo;
 	protected double probabilidad_asistencia_porcentaje;
 	protected boolean asiste; // True si asiste
 
-	public PersonaEnClase(String nombre, String edad, String sexo, double probabilidad_asistencia_porcentaje) {
+	public PersonaEnClase() {
+		this.nombre = this.NOMBRE_POR_DEFECTO;
+		this.edad = this.EDAD_POR_DEFECTO;
+		this.sexo = this.SEXO_POR_DEFECTO;
+		this.probabilidad_asistencia_porcentaje = this.PROBAVILIDAD_DE_ASISTENCIA_POR_DEFECTO;
+	}
+
+	public PersonaEnClase(String nombre, int edad, Sexo sexo, double probabilidad_asistencia_porcentaje) {
 		this.nombre = nombre;
 		this.edad = edad;
 		this.sexo = sexo;
@@ -27,7 +41,7 @@ public class PersonaEnClase {
 		return nombre;
 	}
 
-	public String getEdad() {
+	public int getEdad() {
 		return edad;
 	}
 
@@ -44,7 +58,7 @@ public class PersonaEnClase {
 		this.nombre = nombre;
 	}
 
-	public void setEdad(String edad) {
+	public void setEdad(int edad) {
 		this.edad = edad;
 	}
 
