@@ -5,7 +5,7 @@ public class PersonaEnClase {
 	protected String edad;
 	protected String sexo;
 	protected double probabilidad_asistencia_porcentaje;
-	protected boolean asiste;
+	protected boolean asiste; // True si asiste
 
 	public PersonaEnClase(String nombre, String edad, String sexo, double probabilidad_asistencia_porcentaje) {
 		this.nombre = nombre;
@@ -36,6 +36,7 @@ public class PersonaEnClase {
 	}
 
 	public boolean isAsiste() {
+		// true si asiste
 		return asiste;
 	}
 

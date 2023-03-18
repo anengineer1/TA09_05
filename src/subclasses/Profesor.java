@@ -1,33 +1,34 @@
 package subclasses;
 
 import superclasses.PersonaEnClase;
+import utils.Materia;
 
 public class Profesor extends PersonaEnClase {
 
-	final private String MATERIA_DEFECTO = "Matematicas";
+	final private Materia MATERIA_DEFECTO = Materia.MATEMATICAS;
 	
-	private String asignatura;
+	private Materia materia;
 
-	public Profesor(String nombre, String edad, String sexo, String asignatura) {
+	public Profesor(String nombre, String edad, String sexo, Materia asignatura) {
 		// el enunciado dice que el 20% de las veces no podrá asistir por tanto 80% de
 		// asistencia
 		super(nombre, edad, sexo, 80.0);
-		this.asignatura = asignatura;
+		this.materia = asignatura;
 	}
 	
 	public Profesor() {
 		// el enunciado dice que el 20% de las veces no podrá asistir por tanto 80% de
 		// asistencia
 		super();
-		this.asignatura = this.MATERIA_DEFECTO;
+		this.materia = this.MATERIA_DEFECTO;
 	}
 
-	public String getAsignatura() {
-		return asignatura;
+	public Materia getAsignatura() {
+		return materia;
 	}
 
-	public void setAsignatura(String asignatura) {
-		this.asignatura = asignatura;
+	public void setMateria(Materia materia) {
+		this.materia = materia;
 	}
 
 }
