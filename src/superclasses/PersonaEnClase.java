@@ -2,39 +2,35 @@ package superclasses;
 
 import utils.Sexo;
 
-public class PersonaEnClase {
+public abstract class PersonaEnClase {
 	final private String NOMBRE_POR_DEFECTO = "";
 	final private int EDAD_POR_DEFECTO = 25;
 	final protected Sexo SEXO_POR_DEFECTO = Sexo.MUJER;
-	final protected double PROBABILIDAD_DE_ASISTENCIA_POR_DEFECTO = 50;
 	
 	protected String nombre;
 	protected int edad;
 	protected Sexo sexo;
-	protected double probabilidad_asistencia_porcentaje;
 	protected boolean asiste; // True si asiste
 
 	public PersonaEnClase() {
 		this.nombre = this.NOMBRE_POR_DEFECTO;
 		this.edad = this.EDAD_POR_DEFECTO;
 		this.sexo = this.SEXO_POR_DEFECTO;
-		this.probabilidad_asistencia_porcentaje = this.PROBABILIDAD_DE_ASISTENCIA_POR_DEFECTO;
 	}
 
-	public PersonaEnClase(String nombre, int edad, Sexo sexo, double probabilidad_asistencia_porcentaje) {
+	public PersonaEnClase(String nombre, int edad, Sexo sexo, boolean asiste) {
 		this.nombre = nombre;
 		this.edad = edad;
 		this.sexo = sexo;
-		this.probabilidad_asistencia_porcentaje = probabilidad_asistencia_porcentaje;
+		this.asiste = asiste;
 	}
-
-	protected void calculaAsistencia() {
-		double valor_aleatorio = Math.random() * 100;
-		this.asiste = (probabilidad_asistencia_porcentaje > valor_aleatorio);
-	}
-
-	public boolean isDisponible() {
-		return asiste;
+	
+	//Creamos un funcion para randomizar la edad
+	public static int randEdad() {
+		//Suponemos que el aula es de universiad asi que la persona no puede tener menos de 18 años, pero si puede ser un profesor muy joven
+		//El maximo de edad sera 65 porque si no el alumno seria demasiado viejo y el profesor ya se jubilaría
+		int Edad= (int) (Math.floor(Math.random() * (65 - 18 + 1)) + 18);
+		return Edad;
 	}
 
 	public String getNombre() {
@@ -43,10 +39,6 @@ public class PersonaEnClase {
 
 	public int getEdad() {
 		return edad;
-	}
-
-	public double getProbabilidad_asistencia_porcentaje() {
-		return probabilidad_asistencia_porcentaje;
 	}
 
 	public boolean isAsiste() {
@@ -60,10 +52,6 @@ public class PersonaEnClase {
 
 	public void setEdad(int edad) {
 		this.edad = edad;
-	}
-
-	public void setProbabilidad_asistencia_porcentaje(double probabilidad_asistencia_porcentaje) {
-		this.probabilidad_asistencia_porcentaje = probabilidad_asistencia_porcentaje;
 	}
 
 	public void setAsiste(boolean asiste) {

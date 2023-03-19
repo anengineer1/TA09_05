@@ -1,6 +1,5 @@
 package subclasses;
 
-import subclasses.Estudiante;
 import java.util.ArrayList;
 import utils.Materia;
 
@@ -25,35 +24,35 @@ public class Aula {
 		this.lista_estudiantes = lista_estudiantes;
 		this.materia = materia;
 	}
-
-	public void addEstudiante(Estudiante estudiante) {
-		this.lista_estudiantes.add(estudiante);
-	}
-
+	
+	//Función que mira si es posible dar clase
 	public boolean isClasePosible() {
-
-		if ((lista_estudiantes.size() > this.num_max_estudiantes) // más estudiantes que la capacidad máxima del aula
-				|| (getEstudiantesQueAsisten().size() < (this.lista_estudiantes.size() / 2)) // si hay menos de la mitad
-																								// de todos los
-																								// estudiantes apuntados
-				|| (!this.profesor.isAsiste()) // Si el profesor no puede asistir
-				|| (profesor.getAsignatura() != this.materia)) { // Si el profesor no puede dar la materia a la que el
-																	// aula
-																	// está destinada
+		if ((lista_estudiantes.size() > this.num_max_estudiantes) //Si hay más estudiantes que la capacidad máxima del aula
+				|| (getEstudiantesQueAsisten().size() < (this.lista_estudiantes.size() / 2)) //Si hay menos de la mitad de todos los estudiantes apuntados
+				|| (Profesor.isDisponible() == false) //Si el profesor no puede asistir
+				|| (profesor.getAsignatura() != this.materia)) { //Si el profesor no puede dar la materia a la que el aula está destinada
 			return false;
 		} else {
 			return true;
 		}
 	}
-
+	
+	//Se añaden los alumnos que asisten a un ArrayList para poder contarlos y comprobar si son mas de la mitad
 	public ArrayList<Estudiante> getEstudiantesQueAsisten() {
 		ArrayList<Estudiante> estudiantes_que_asisten = new ArrayList<Estudiante>();
 		for (Estudiante estudiante : lista_estudiantes) {
-			if (estudiante.isAsiste()) {
+			if (estudiante.isAsiste() == true) {
 				estudiantes_que_asisten.add(estudiante);
 			}
 		}
 		return estudiantes_que_asisten;
+	}
+	
+	//Generamos un nuemro random para que sea el número máximo de estudiantes
+	public static int randMaxEstudiantes() {
+		//Para que los ejemplos funcionen se puede hacer clase con 2 alumnos, pero no seria realista
+		int MaxEstudiantes= (int) (Math.floor(Math.random() * (35 - 2 + 1)) + 2);
+		return MaxEstudiantes;
 	}
 
 	public Materia getMateria() {
