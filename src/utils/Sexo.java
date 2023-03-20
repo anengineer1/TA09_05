@@ -1,5 +1,5 @@
 package utils;
 
 public enum Sexo {
-	HOMBRE, MUJER
+	HOMBRE, MUJER;
 }
