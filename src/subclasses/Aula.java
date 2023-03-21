@@ -26,14 +26,26 @@ public class Aula {
 	}
 	
 	//Función que mira si es posible dar clase
-	public boolean isClasePosible() {
+	public void isClasePosible() {
 		if ((lista_estudiantes.size() > this.num_max_estudiantes) //Si hay más estudiantes que la capacidad máxima del aula
 				|| (getEstudiantesQueAsisten().size() < (this.lista_estudiantes.size() / 2)) //Si hay menos de la mitad de todos los estudiantes apuntados
 				|| (Profesor.isDisponible() == false) //Si el profesor no puede asistir
 				|| (profesor.getAsignatura() != this.materia)) { //Si el profesor no puede dar la materia a la que el aula está destinada
-			return false;
+			System.out.println();
+			System.out.println("NO se puede dar clase en este aula");
+			System.out.println();
+			System.out.println("----------------------------------");
 		} else {
-			return true;
+			System.out.println();
+			System.out.println("SI se puede dar clase en este aula");
+			System.out.println();
+			for(int x=0; x < this.lista_estudiantes.size(); x++) {
+				if(this.lista_estudiantes.get(x).isAprobado() != "NO") {
+					System.out.println(this.lista_estudiantes.get(x).isAprobado());
+				}
+			}
+			System.out.println();
+			System.out.println("----------------------------------");
 		}
 	}
 	

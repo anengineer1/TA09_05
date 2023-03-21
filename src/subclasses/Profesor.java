@@ -21,7 +21,7 @@ public class Profesor extends PersonaEnClase {
 	//Por eso hacemos un random de 5 numeros y si sale el quinto, será que no asiste
 	public static boolean isDisponible() {
 		Random random = new Random();
-		int ValorAleatorio = random.nextInt(4);
+		int ValorAleatorio = random.nextInt(5);
 		boolean disponible;
 		
 		if (ValorAleatorio == 4) {

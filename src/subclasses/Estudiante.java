@@ -18,7 +18,7 @@ public class Estudiante extends PersonaEnClase {
 	//Por eso hacemos un random de 0 o 1 y si sale 1, será que no asiste
 	public static boolean isDisponible() {
 		Random random = new Random();
-		int ValorAleatorio = random.nextInt(1);
+		int ValorAleatorio = random.nextInt(2);
 		boolean disponible;
 		
 		if (ValorAleatorio == 1) {
